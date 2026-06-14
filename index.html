@@ -771,24 +771,33 @@
     html { scroll-padding-top: 80px; }
 
 
-    .lctr {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    /*.lctr {*/
+    /*  width: 80px;*/
+    /*  height: 80px;*/
+    /*  border-radius: 50%;*/
+    /*  overflow: hidden;*/
+    /*  display: flex;*/
+    /*  justify-content: center;*/
+    /*  align-items: center;*/
+    /*}*/
 
-    .lctr img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    /*.lctr img {*/
+    /*  width: 100%;*/
+    /*  height: 100%;*/
+    /*  object-fit: cover;*/
+    /*}*/
 
     *, body, a, button { cursor: auto !important; }
     #cur, #cur-ring, .trail { display: none !important; }
+
+    /* Loader image fade in */
+    #loaderBubble img {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    #loaderBubble img.loaded {
+      opacity: 1;
+    }
 
   </style>
 </head>
@@ -1495,16 +1504,38 @@
     }
   }
 
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
+    // Loader image — wait natta, fallback ready
+    var loaderImg = document.querySelector('#loaderBubble img');
+    if (loaderImg) {
+      if (loaderImg.complete) {
+        loaderImg.classList.add('loaded');
+      } else {
+        loaderImg.onload  = function () { loaderImg.classList.add('loaded'); };
+        loaderImg.onerror = function () {
+          document.getElementById('loaderBubble').innerHTML = '👩‍💻';
+        };
+      }
+    }
+
     loadImages();
-    // Reduced loader time — 1.8s instead of 2.5s
-    setTimeout(function() {
-      var l = document.getElementById('loader');
-      if (l) {
-        l.classList.add('gone');
-        setTimeout(function() { l.remove(); countUp(); buildSolar(); }, 500);
-      } else { countUp(); buildSolar(); }
-    }, 1800);
+
+    // 800ms minimum — too fast feels broken, more than that unnecessary
+    var startTime = performance.now();
+
+    function dismissLoader() {
+      var elapsed   = performance.now() - startTime;
+      var remaining = Math.max(0, 800 - elapsed);
+      setTimeout(function () {
+        var l = document.getElementById('loader');
+        if (l) {
+          l.classList.add('gone');
+          setTimeout(function () { l.remove(); countUp(); buildSolar(); }, 500);
+        } else { countUp(); buildSolar(); }
+      }, remaining);
+    }
+
+    dismissLoader();
   });
 
   /* ══════════════════════════════════════════
