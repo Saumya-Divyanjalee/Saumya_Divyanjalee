@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌌 Saumya Divyanjalee — Portfolio
+# 🌌 Saumya Divyanjalee - Portfolio
 
 ### Full Stack Developer · Spring Boot Engineer · AI/ML Enthusiast · Tech Educator
 
@@ -9,7 +9,7 @@
 [![YouTube](https://img.shields.io/badge/YouTube-%40saumyadivyanjalee-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@saumyadivyanjalee)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/saumya-divyanjalee-1a2608268/)
 
-A dark, animated, galaxy-themed personal portfolio — built to showcase backend engineering, AI/ML work, and full-stack projects through an immersive, space-inspired interface.
+A dark, animated, galaxy-themed personal portfolio - built to showcase backend engineering, AI/ML work, and full-stack projects through an immersive, space-inspired interface.
 
 </div>
 
@@ -17,9 +17,9 @@ A dark, animated, galaxy-themed personal portfolio — built to showcase backend
 
 ## ✨ Overview
 
-This repository hosts my personal developer portfolio — a single-page site designed around a galaxy/space concept, featuring an animated starfield background, an orbiting "Tech Universe" of skills, and a curated showcase of projects and YouTube content.
+This repository hosts my personal developer portfolio - a single-page site designed around a galaxy/space concept, featuring an animated starfield background, an orbiting "Tech Universe" of skills, and a curated showcase of projects and YouTube content.
 
-It's built entirely with **vanilla HTML, CSS, and JavaScript** — no frameworks, no build tools — focused on performance, smooth animation, and a distinctive visual identity.
+It's built entirely with **vanilla HTML, CSS, and JavaScript** - no frameworks, no build tools - focused on performance, smooth animation, and a distinctive visual identity.
 
 ---
 
